@@ -6,9 +6,17 @@ namespace RC\Controller;
 */
 
 class Kernel{
+  private $router;
+  private $request;
 
   function __construct(){
-    echo "Entro en el Kernel";
+    $this->router=new Router();
+    $this->request=new Request();
+  }
+
+  public function start_kernel(){
+    $this->router->start_router();
+    $this->router->parse_route($this->request);
   }
 }
 ?>

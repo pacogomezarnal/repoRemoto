@@ -31,6 +31,5 @@ class Router{
       $request->setAccion($explode_url[1]);
       $request->setParams(array_slice($explode_url,2));
     }
-    var_dump($request);
   }
 }

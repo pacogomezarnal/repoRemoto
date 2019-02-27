@@ -29,14 +29,23 @@ class Kernel{
             'Accion'=>$this->request->getAccion(),
             'Params'=>$this->request->getParams())
           );
-    $this->start_action();
   }
 
-  private function start_action(){
+  public function start_action(){
     $controllerName=$this->request->getControlador();
     if(!$controllerName){
-      $controller = new Actions\HomeController();
+      $controller=new Actions\HomeController();
+    }else{
+      $controllerName="RC\\Controller\\Actions\\".ucfirst($controllerName)."Controller";
+      $controller=new $controllerName;
+    }
+    $actionName=$this->request->getAccion();
+    if(!$actionName){
+      call_user_func_array(array($controller,"index"),array($this->request));
+    }else{
+      call_user_func_array(array($controller,$actionName),array($this->request));
     }
   }
+
 }
 ?>

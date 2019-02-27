@@ -4,21 +4,25 @@ namespace RC\Controller\Actions;
 use RC\Core\Controller;
 
 /*
-* HomeController
+* BlogController
 */
 
-class HomeController implements Controller
+/**
+ *
+ */
+class BlogController implements Controller
 {
 
   function __construct()
   {
-    echo "HomeController";
+    echo "BlogController";
   }
 
   function index($request){
     echo "index";
   }
-  function contacto($request){
-    echo "contacto";
+
+  function list($request){
+    echo "list";
   }
 }

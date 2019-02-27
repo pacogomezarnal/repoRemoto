@@ -1,8 +1,11 @@
 <?php
 namespace RC\Core;
 
-interface Controller{
+/*
+* Controller interface
+*
+*/
+interface Controller
+{
   public function index($request);
 }
-
-?>

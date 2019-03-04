@@ -1,11 +1,26 @@
 <?php
 namespace RC\Core;
 
+use RC\Controller\Request;
+use RC\Controller\Response;
+
 /*
-* Controller interface
+* Controller
 *
 */
-interface Controller
+class Controller implements ControllerInterface
 {
-  public function index($request);
+
+  function __construct()
+  {
+
+  }
+
+  function index(Request $request){
+    return $this->render("");
+  }
+
+  function render($vista,$layout=null){
+    return new Response();
+  }
 }

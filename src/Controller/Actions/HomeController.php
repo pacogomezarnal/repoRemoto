@@ -12,7 +12,7 @@ class HomeController implements Controller
 
   function __construct()
   {
-    echo "HomeController";
+    echo "HomeController<br>";
   }
 
   function index($request){

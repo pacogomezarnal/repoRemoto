@@ -1,6 +1,8 @@
 <?php
 namespace RC\Core;
 
+use RC\Controller\Request;
+
 /*
 * Controller interface
 *

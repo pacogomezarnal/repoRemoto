@@ -17,10 +17,20 @@ class Controller implements ControllerInterface
   }
 
   function index(Request $request){
-    return $this->render("");
+    return $this->render("home/index");
   }
 
   function render($vista,$layout=null){
-    return new Response();
+    ob_start();
+    require(__DIR__."/../Views/".$vista.".php");
+    $content_body=ob_get_clean();
+    if($layout==null){
+      ob_start();
+      require(__DIR__."/../Views/base.php");
+      $html_content=ob_get_clean();
+    }
+    $response=new Response();
+    $response->setContent($html_content);
+    return $response;
   }
 }

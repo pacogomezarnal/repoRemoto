@@ -7,18 +7,11 @@ use RC\Core\Controller;
 * HomeController
 */
 
-class HomeController implements Controller
+class HomeController extends Controller
 {
 
   function __construct()
   {
-    echo "HomeController<br>";
   }
 
-  function index($request){
-    echo "index";
-  }
-  function contacto($request){
-    echo "contacto";
-  }
 }

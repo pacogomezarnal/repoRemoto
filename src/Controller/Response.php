@@ -1,5 +1,4 @@
 <?php
-<?php
 namespace RC\Controller;
 
 /*
@@ -11,6 +10,7 @@ class Response{
 
     function __construct(){
       $this->content="";
+    }
 
     /**
      * Get the value of <?php

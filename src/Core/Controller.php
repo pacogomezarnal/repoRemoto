@@ -21,12 +21,14 @@ class Controller implements ControllerInterface
   }
 
   function render($vista,$layout=null){
+    //cargar las var globales
+    global $config;
     ob_start();
-    require(__DIR__."/../Views/".$vista.".php");
+    require($config['ROOT_SRC']."/Views/".$vista.".php");
     $content_body=ob_get_clean();
     if($layout==null){
       ob_start();
-      require(__DIR__."/../Views/base.php");
+      require($config['ROOT_SRC']."/Views/base.php");
       $html_content=ob_get_clean();
     }
     $response=new Response();
